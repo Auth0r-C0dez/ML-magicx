@@ -1,8 +1,13 @@
 series in pandas is one dimesnsional it dsnt have columns like a data frame.we create a series as pd.Series([elements]).
 attributes are some information which is just stored where as function are block of code that performs some operation.if there is no parenthesis in the end then it as an attribute 
 or else it is a function.
+
+
 file.dtype is an attribute that is used to check the heading values of the data that is given.
 if in a given set of data  we want to mess with the columns then we can use the var_name= filename.columns then we get a list of columns and we can perform our required operation.
+
+PYTHON IS BASICALLY USED FOR DATA ANALYSIS LIBRARY
+
 car_sales["Doors"].sum() is the syntax to sum the individual columns.likewise following the same syntax we can get the mean ,median etc of our choice.
 animals = pd.Series(["cat","snake"],
                    index=[2,3]) /////likw this we can create list with out choice of index i.e customized indx
