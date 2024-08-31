@@ -1,0 +1,55 @@
+series in pandas is one dimesnsional it dsnt have columns like a data frame.we create a series as pd.Series([elements]).
+attributes are some information which is just stored where as function are block of code that performs some operation.if there is no parenthesis in the end then it as an attribute 
+or else it is a function.
+file.dtype is an attribute that is used to check the heading values of the data that is given.
+if in a given set of data  we want to mess with the columns then we can use the var_name= filename.columns then we get a list of columns and we can perform our required operation.
+car_sales["Doors"].sum() is the syntax to sum the individual columns.likewise following the same syntax we can get the mean ,median etc of our choice.
+animals = pd.Series(["cat","snake"],
+                   index=[2,3]) /////likw this we can create list with out choice of index i.e customized indx
+iloc refers to poaition where as loc refers to index.
+
+car_sales.loc[:3] //by this we can get the details of the chart up until index numbered as 3  .....car_sales.Make this too works
+car_sales["Make"] //by this we  can the data of an entire column
+the above dot method gives error if there is gap in the name of the column
+
+car_sales[car_sales["Make"] == "Toyota"] this will give the evry row that has Toyota in the make column
+
+pd.crosstab(car_sales["Make"] , car_sales["Doors"])  // by this method we can get the detailed analysis of two  or more columns
+car_sales.groupby(["Make"]).mean()  // by this we can get all the columns wrt mean of the make column and we get the average value of all the values from the column
+
+car_sales["Odometer (KM)"].plot() // by this method we can get a graph of a data based on the column mentioned but we ned to import matplotlib first.
+car_sales["Odometer (KM)"].hist()  // by this we can get the histogram of the written column
+
+car_sales_missing["Odometer"].fillna(car_sales_missing["Odometer"].mean(),inplace=True) //by this way we can replace the NAN values of a column with the mean of the values of the ame column.
+by default the values of inplace is fasle but if we give it true that means it will actually do it.
+
+car_sales_missing_dropped = car_sales_missing.dropna() ///by this we can drop the entire rows that has the NAN value at all
+
+car_sales_missing_dropped.to_csv("car-sales-missing-dropped")  // this is how we create a specific data set to a csv file.
+
+when we create a new column using pandas by default it appears on the right hand side of the series.
+
+inplace = true ////this gives the same data frame  as output with carrying out the given block of instruction.
+
+if we are to create a new column in a data frame and if we are to enter the value of the new column by first creating a list then the number of values of columns must be equal to the number of rows and if we are to create the values using a series then we can create any  number of values the data frame will just give NAN for the lacking values.
+
+if we are to carry out an operatio in a d frame and make it work at once then either we have to re assign or use the inplace method.
+
+seats_column = pd.Series([5,4,5,4,5])
+car_sales["Seats"] = seats_column ////this is how we create a column using a series 
+
+car_sales["Seats"].fillna(5, inplace=True)  ////this is how we fill the remaining values tht deosnt have value once the column is created by series.
+
+fuel_economy =[7.5,8.9, 8.9, 9.0, 7.8, 8.9 , 9.0, 7.8, 8.7, 9.0]
+car_sales["Fuel per 100kM"] = fuel_economy
+car_sales   ///creating a new column using a list.
+
+car_sales["Total fuel used (L)"] = car_sales["Odometer (KM)"] /100 * car_sales["Fuel per 100kM"]
+car_sales//// this is how we perform operation using the entire column and assign to a new column and eventually view the data f\
+
+car_sales["Number of wheels"] = 4   // this is how e create a column of a single value
+
+car_sales.drop("Total fuel used",axis=1,inplace = True)  // this is how we drop a column
+
+car_sales["Odometer (KM)"] = car_sales["Odometer (KM)"].apply(lambda x:x/1.6)
+car_sales ///this is how we apply function to a column and view the d frame
