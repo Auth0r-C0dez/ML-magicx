@@ -1,0 +1,32 @@
+one dimensional array is reffered AS vector
+ 2d and 3d as matrix.
+NumPy achieves its speed benefit by a process of vectorisation which does calculations by avoiding loops and loops and the whole process is called broadcasting.
+
+a1= np.array([1,2,34]) //if the array is one dimensional then it is named as array,vector
+
+a2 = np.array([[1,2,3,4],
+               [23,4,52,234]]) //this is how we create an array.
+
+///the ndim attribute of numpy refers to the number of dimensions in the array.a 3 dimensional array is created when we create 3 arrays in a single array.
+
+a2.shape, a2.ndim, a2.dtype, a2.size, type(a2) //it gives the shape of the matrix, dimension of mnatrix, data type of the matrix, number of elements in matrix, and type of data structure.
+
+the main data type of numpy is ndarray(n dimensional array)
+
+if we create an function and press shift enter within the brackets of the function then it will give us the syntax of the function and the type of output it is supposed to give us,
+
+
+// the random seed is a value for a specific sequence of random number at the given size of the array and no matter where we run it if we are gving the same seed value we will get 
+the same set of random values in that very specific size
+np.random.seed(6)
+random_array_3 = np.random.random((4,3))
+random_array_3
+
+np.unique(random_array_4) // by this we can get the unique valus in a specific array.
+
+a2[1] //by this we can get the valus in the first index of the martrix.
+
+a4 = np.random.randint(10,size = (2,3,4,5)) //5 columns 4 rows 3 matrices with a larger martrix 2 large matrices of 5 4 3 
+
+a4[:, :, :, :4] //this means slice all dimension of 1 ,2, 3 but show only the first 4 numbers of last dimension.
+
