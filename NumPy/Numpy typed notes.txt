@@ -26,6 +26,21 @@ np.unique(random_array_4) // by this we can get the unique valus in a specific a
 
 a2[1] //by this we can get the valus in the first index of the martrix.
 
+magic function in jupyter notebook always start with a % symbol .
+%timeit function gives the time taken for the execution of a specific command or code.
+ 
+reshape in numpy is used to add new rows or columns or new dimensions to an existing matrix where as transpose is used to flip the rows and columns of a matrix.
+
+a2.reshape(2,3,1) //by this we add a new dimension as 1 in the pre existing array.
+
+mat1 = np.random.randint(10,size=(5,3))
+mat2 = np.random.randint(10,size=(5,3))  // by this we can create a random matrix of random integer from 0 to 10 of the given size 
+
+mat1*  mat2  // by this we can multiply the matrices with each other with their corresponding elements
+
+for the dot product  to be executeable the inner dimension of the matrtix must be same ....where as the result of the final matrix is given by the last dimensions of the matrices.
+
+
 a4 = np.random.randint(10,size = (2,3,4,5)) //5 columns 4 rows 3 matrices with a larger martrix 2 large matrices of 5 4 3 
 
 a4[:, :, :, :4] //this means slice all dimension of 1 ,2, 3 but show only the first 4 numbers of last dimension.
