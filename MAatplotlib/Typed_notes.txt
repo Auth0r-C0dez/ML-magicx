@@ -1,0 +1,132 @@
+Matplotlib is basically used for ploting the data .This library is basically built on numpy arrays and python.it can be indirectly integrated with pandas ...and it posses the feature to create basic and advanced plots.
+
+%matplotlib inline  //this method is used to import graphs and chart all at once.
+
+if we use plt.plot() then we get a plot or figure with the data of where the chart got executed but if we add ; at the end then the data is not shown and only the plot is given.
+
+plt.plot([10,23,21,43,32]); // by this we  can get a plotted graph.
+
+axes in matplotlib actually means the numbr of sub plots the graph is supposed to have.
+
+#1 .import matplotlib and get started
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+#2 prepare the data
+x = [1,2,3,4]
+y = [11,22,33,44]
+
+#3 Set up plot
+fig , ax = plt.subplots(figsize=(5,5))  #(width , height)
+
+#4 plot the data
+ax.plot(x,y)
+
+#4 customize plot
+ax.set(title="simple plot" , 
+       xlabel ="ex-axis",
+       ylabel ="yai-axis")
+
+#5 save and show the figure
+fig.savefig("images/sample-plot.png")
+
+a scatter plot gives the graph with dots embedded in it.
+
+if we change the cells then we have to reassign the fig and ax.
+#creating some data
+x = np.linspace(0,10,100) #start,stop and number of items
+x[:10] # this will show the first 10 items
+
+# plot the data and create a line plot
+fig,ax = plt.subplots() # this line creates the graph or the line plot
+ax.plot(x,x**2);
+
+# creatiing a scatter plot
+fig, ax = plt.subplots()
+ax.scatter(x, np.exp(x));  ////like the exponent we can use other maths functions like sin ,cos etc.
+
+# making a plot from a dictionary
+nut_butter_prices = {"Almond" : 10,
+                     "Peanut": 15,
+                     "kaju": 10}    /////creating a dictionary
+fig,ax = plt.subplots()    //creating the bar plot
+ax.bar(nut_butter_prices.keys() , nut_butter_prices.values())  ////asiginign the  comparision factors
+ax.set(title = "My dry fruits",    //this is how we give the table
+       ylabel = "Price");
+
+fig, ax = plt.subplots()
+ax.barh(list(nut_butter_prices.keys()) , list(nut_butter_prices.values()));    ///using this method we can create horizontal bar.
+
+x = np.random.randn(1000)
+fig,ax = plt.subplots()
+ax.hist(x);   //////this is how we create a histogram.
+
+# Subplots option 1
+fig,((ax1,ax2), (ax3, ax4)) = plt.subplots(nrows=2,
+                                           ncols=2,
+                                           figsize=(10,5))
+#PLot to each diferent axis
+ax1.plot(x,x/2);
+ax2.scatter(np.random.random(10), np.random.random(10));
+ax3.bar(nut_butter_prices.keys(), nut_butter_prices.values());
+ax4.hist(np.random.randn(1000));    //////////like this we can create multiple axes within 1 image
+
+pandas library is build upon matplotlib
+
+ts = pd.Series(np.random.randn(1000),
+               index = pd.date_range("1/1/2024",periods = 1000))
+ts = ts.cumsum()
+ts.plot();  /// by this method we can actually create our own data frame from the random integers as dates in the range and then we can plot the graph of the cumulative sum.
+
+heart_disease.plot.hist(figsize=(10,30),subplots = True);  ///by this we can plot the histograms for all the columns.
+
+if we are to see the distribution of the data we can use the plot() feature but if we want someth9ing more sophisticated and advanced we must use some thing that is called the 
+OO method to plot the graphs and visualisation.
+
+fix,ax = plt.subplots(figsize=(10,6))
+over_50.plot(kind = 'scatter',
+             x='age',
+             y='chol',
+             c='target',
+             ax= ax);   //this is how we plot using the OO method and the last line ax=ax meaning it gives the above defined axes to the plot function.
+/////////Creating an object oriented plot system from the scratch the lines of codes are self explanatory.
+
+fig,ax =plt.subplots(figsize=(10,6))
+scatter = ax.scatter(x=over_50["age"],
+                     y=over_50["chol"],
+                     c=over_50["target"])
+ax.set(title="Age and cholesterol levels comparison",
+       xlabel="Age",
+       ylabel="Cholesterol")
+ax.legend(*scatter.legend_elements(),title="Target");
+ax.axhline(over_50["chol"].mean(),
+           linestyle='--'); 
+
+//////Creating two subplots in one fig the codes are self explanatory but just the syntax is to be rembererd
+fig,(ax0,ax1) = plt.subplots(nrows =2,
+                             ncols=1,
+                             figsize=(10,10),
+                             sharex=True)
+scatter = ax0.scatter(x = over_50["age"],
+                      y = over_50["chol"],
+                      c = over_50["target"])
+ax0.set(title="Age and cholesterol level",
+        ylabel="Cholesterol")
+ax0.legend(*scatter.legend_elements(),title = "Target")
+ax0.axhline(y=over_50["chol"].mean(),
+            linestyle="--");
+scatter = ax1.scatter(x=over_50["age"],
+                      y=over_50["thalach"],
+                      c= over_50["target"])
+ax1.set(title="Age and max heart rate",
+        xlabel="Age",
+        ylabel="Max heart rate")
+ax.legend(*scatter.legend_elements(),title="Target")
+ax1.axhline(y=over_50["thalach"].mean(),
+            linestyle="--");
+fig.suptitle("Heart data analysis",fontsize=16,fontweight="bold");..
+
+plt.style.use('seaborn-whitegrid')   ///this is how we get to use the styles of the matplotlib.
+
+fig.savefig("heart-disease-plot.png") #this is how we save the figure
+
