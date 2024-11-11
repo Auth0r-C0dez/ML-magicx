@@ -1,0 +1,131 @@
+RandomForestClassifier is  a classification machine learning model.its capable of learning patterns within a data aka row etc.
+clf stands for classifier in scikit-learn.
+
+clf.score(x_train,y_train) // by this we can get the mean accuracy of the accuracy in the training data.
+
+the default n_estimators is 10.
+
+To get our data ready for using with  machine learning  :
+Three things that we have to do :-
+1. Split the data into features and labels
+2. Filling (also called imputing) or disregarding missing values
+3. Converting non numerical values to numerical values (also called feature encoding)
+
+in pandas axis 1 is the column heading axes and axes 0 is the rows axis.
+
+x = heart_disease.drop("target",axis = 1)  ///this will drop the target column
+
+Sometimes the reduction of data can be called dimensionality or column reduction.
+
+we import the randomForest regressor because the regressor can actually help to predict a number other then learning a pattern,
+
+model.fit(x_train,y_train) //this is how the model gets trained basd on the above provided data set.
+
+model = RandomForestRegressor()((((((((((((((RandomForestRegressor(): This part is creating a specific type of model called a "Random Forest Regressor." Let’s break that down:
+
+Random Forest: This is a method that uses many small models (called decision trees) to make predictions. It combines their results to be more accurate and reliable.
+
+Regressor: This indicates that the model is used for regression tasks, which means it's designed to predict continuous numbers (like prices, temperatures, etc.) instead of categories (like yes/no).)))))))))))))))))
+
+One-hot encoding is a way to represent categorical data as binary values ..
+
+if there are missing data values then we can do these:-
+fill them with some values(also known as imputation)
+and remove the samples with missing data all together.
+
+from sklearn.preprocessing import OneHotEncoder ///This class is used to convert categorical data into a one-hot encoded format.
+from sklearn.compose import ColumnTransformer  ////his line imports the ColumnTransformer class, which helps you apply different transformations to different columns in your data.
+
+categorical_features = ["Make", "Colour", "Doors"]   ///// This is a list of column names in your dataset that contain categorical data.
+
+one_hot = OneHotEncoder() ////This instance will be used to perform one-hot encoding on the categorical features you defined earlier
+
+transformer = ColumnTransformer([("one_hot", one_hot, categorical_features)],
+                                remainder="passthrough")
+
+
+((((((transformer: This creates an instance of ColumnTransformer.
+
+[("one_hot", one_hot, categorical_features)]: This is a list of tuples where:
+
+"one_hot": This is just a name you give to this transformation. It’s like a label.
+one_hot: This refers to the OneHotEncoder instance you created earlier. It will be used to transform the specified columns.
+categorical_features: This specifies which columns (in this case, "Make," "Colour," and "Doors") will be transformed by one-hot encoding.
+remainder="passthrough": This means that any columns in your dataset that are not in categorical_features will remain unchanged and will be included in the output. So, if you have other columns (like numerical data), they will just pass through without any changes.))))))))))
+
+transformed_x = transformer.fit_transform(x)
+
+((((transformer.fit_transform(x): Here, you are calling the fit_transform method on your transformer instance.
+
+x: This is the original dataset (usually a DataFrame) you want to transform. It contains the columns defined earlier.
+fit_transform: This method does two things:
+fit: It learns what the data looks like (like finding out how many unique categories there are).
+transform: It actually changes the data according to the specified transformations (one-hot encoding in this case).))))
+
+car_sales_missing.isna().sum() ///this gives the sum of missing values in  a particular column.
+
+car_sales_missing["Make"].fillna("missing",inplace =True) //this line will fill the NAN spaces with the missing keyword.
+
+from sklearn.model_selection import train_test_split  ////we must import  this in order to carry out the split and train tst.
+
+in our ML model of California housing dataset we will use the 
+
+//these are the features of the dataset using these features we will be predicting the target.
+
+feature_names': ['MedInc',
+  'HouseAge',
+  'AveRooms',
+  'AveBedrms',
+  'Population',
+  'AveOccup',
+  'Latitude',
+  'Longitude'],
+
+//the target is 
+ 'target_names': ['MedHouseVal'],
+
+housing_df = pd.DataFrame(housing["data"], columns=housing["feature_names"])  ///this is how we convert a data set to a data frame for clear visualisation the data word is given as the ]
+dictionary given in the dataset ...and eventually we get the columns named with the features with the next section .we have to this everytime we create a dataset to a dataframe.
+
+housing_df["MedHouseVal"] = housing["target"]   ////here we put the array of medhouseval from target to medhouseval column..which was initially given individually earlier in the dataset.
+
+details about the datasets columns definition can be found in the user guide section.
+
+Trying different things is the best way to apprehend the ML journey and discover better fruitful results.
+
+In random forest decision tress it basically combines many decision trees and gets there information together to form a final decision.
+
+an ensamble is a combination of different model to make a single prediction and random forest is a subset of ensamble.
+
+
+n_estimators in randomforest regressor means the number of decision tress to be used.
+
+a decision tree is a non-linear model built by constructing many linear boundaries.
+
+RandomForestRegressor to be used when using to predict real world and continuous data where as RandomForestClassifier is used to predict yes or no type of situation AKA true false situation.
+
+if we have labelled data it is best to use ensamble model such as random forest.
+if we have unstructured data(images etc) we must use deep learning or transferred learning.
+
+feature or data actually mean the same thing.
+
+seaborn is a data visualisation library that is built on matplotlib but here just use the heatmap function.
+
+In summary the classfification matrix :-
+** Accuracy :- is a good measure the start with if all the classes are balanced
+** Precision and recall become more important when classes are imbalanced
+** If false predictions are worse than false negatives,aim for higher precision.
+** If false predictions are worse than flase positves, aim for higher recall.
+** F1-Score is a combination of precision and recall.
+
+
+
+
+
+
+
+
+
+
+
+
