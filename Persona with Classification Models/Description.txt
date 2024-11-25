@@ -1,0 +1,40 @@
+Here I have worked with a dataset containing customer information to predict the segmentation or persona of customers. The provided files contain essential data for training, testing, and submission. Below is a detailed description of the files and their formats.
+
+Files Description :-
+train.csv: This file contains the training dataset used to build and train your model. It includes both the input features and the target variable (customer segmentation).
+test.csv: This file contains the test dataset, which includes the input features for customers. You will need to predict the corresponding target variable (segmentation) for this set.
+sample_submission.csv: This is a sample submission file in the correct format. It contains the expected structure for your predictions, including the customer IDs and the predicted segment labels.
+
+Columns in the Files --
+train.csv ->
+ID: Unique identifier for each customer.
+Sex: Gender of the customer (e.g., Male, Female).
+Bachelor: Indicates if the customer is married or single.
+Age: The customer's age.
+Graduated: Whether the customer has completed their graduation (Yes/No).
+Career: Occupation type of the customer.
+Work Experience: Number of years the customer has been working.
+Family Expenses: Monthly family expenditure categorized as Low, Average, or High.
+Family Size: Number of family members.
+Variable: A categorical feature representing other characteristics.
+Segmentation: The target variable, which is the assigned customer persona (e.g., Akshat, Bhavesh, Chaitanya, or Darsh).
+Description: Additional insights into the customer behavior.
+
+test.csv -->
+Contains the same columns as train.csv, except the target variable (Segmentation) is missing. The goal is to predict this column for each customer.
+
+sample_submission.csv  -->
+ID: The unique customer identifier.
+Segmentation: The predicted persona for each customer (Akshat, Bhavesh, Chaitanya, or Darsh).
+
+What are we predicting? :--
+You are tasked with predicting the Segmentation of customers in the test.csv file. Each customer belongs to one of four predefined segments: Akshat, Bhavesh, Chaitanya, or Darsh. The target variable is Segmentation, which you will predict based on the features provided.
+
+Acronyms and Key Terms ---
+ID: Unique identifier for each customer.
+Segmentation: The customer persona that the company has assigned to each individual based on their profile.
+Family Expenses: Categorized into Low, Average, and High, this feature represents the monthly expenditure of the customer's household.
+Bachelor: Refers to the marital status of the customer. "Yes" indicates the customer is single; "No" means they are married.
+Graduated: Indicates if the customer has completed their graduation.
+Career: The customer's occupation, which could influence their buying behavior.
+Work Experience: The total years of work experience the customer has, representing their professional maturity.
