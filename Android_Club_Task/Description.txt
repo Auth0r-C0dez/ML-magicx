@@ -1,0 +1,20 @@
+Objective: 
+
+Analyze the provided customer dataset and develop a machine learning solution to segment customers into meaningful groups based on their purchasing behavior, demographics, and interaction with past marketing campaigns.
+
+Dataset:
+
+The dataset includes features such as customer demographics (e.g., year of birth, education, marital status), purchasing habits (e.g., wine, meat, and gold purchases), and marketing campaign responses. Missing values and data preprocessing might be required.
+
+Task Requirements:
+
+1. Data Exploration and Preprocessing:
+
+- Conduct exploratory data analysis (EDA) to understand patterns, distributions, and relationships between features.
+- Handle missing values, outliers, and categorical data as necessary.
+- Scale and normalize data for clustering, if required.
+
+2. Analysis and Interpretation:
+
+- Characterize each segment based on customer attributes (e.g., age, income, purchasing preferences).
+- Suggest potential marketing strategies tailored to each segment
