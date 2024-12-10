@@ -1,0 +1,10 @@
+ Do any one of the following tasks
+
+1.Apply Standard Computational Statistics and any Machine Learning Algorithm of your choice.
+  Evaluate the model using proper metrics like F1-Score, Root mean Squared Error (RMSE) etc.
+  Visualization of the Statistics must be submitted separately as a PDF file.
+
+
+2. Impute, Replace Null values with proper Imputation Techniques.
+ Train the data using Multi Layered Perceptron (To add non linearity) and Visualise training   results.
+ Visualization of the Statistics and Loss Function Graph must be submitted separately as a PDF file.
